@@ -52,7 +52,7 @@ app.post('/submit-data', function (req, res) {
         var name = req.body.firstName + ' ' + req.body.lastName+ ' ';
         var Age= req.body.myAge+'';
         var Gender = req.body.gender+'';
-        Qual= ' Qualification'+ req.body.Qual
+        Qual= ' Qualification: '+ req.body.Qual
         console.log(req.body.Qual)
         res.send({
         status: true,
