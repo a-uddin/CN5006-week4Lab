@@ -1,32 +1,101 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<title>Student Enrollment Form</title>
+    <meta charset="UTF-8">
+    <title>Student Details Form</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-container {
+            max-width: 900px; /* Set maximum width suitable for laptop screens */
+            margin: auto;
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body bgcolor= beige>
-    <form action="/submit-data" method="post" >
-    <p><Strong> Student Details </p>
-    First Name: <input name="firstName" type="text" /> <br/><br/> Last Name : <input name="lastName" type="text" /> <br/><br/> Email: &emsp;&emsp; <input type="email" id="emailid"
-    name="email"/><br/> <br/>
-    Age : &emsp;&emsp; &ensp;<input name="myAge" type="text" /> <br/>
-    <p>Please select your gender:</p>
-    <input type="radio" id="male" name="gender" value="male">
-    <label for="male">Male</label><br>
-    <input type="radio" id="female" name="gender" value="female">
-    <label for="female">Female</label><br>
-    <input type="radio" id="other" name="gender" value="other">
-    <label for="other">Other</label>
-    <p> Qualifications </p>
-    <input type="checkbox" name="Qual" value="GCSE"> GCSE <br/>
-    <input type="checkbox" name="Qual" value="A-level"> A- level <br>
-    <input type="checkbox" name="Qual" value="Higher National Certificate"> Higher National Certificate/Level 4 <br/>
-    <input type="checkbox" name="Qual" value="HND"> Foundation Degree/HND/DipHE/Level 5 <br/>
-    <input type="checkbox" name="Qual" value="B.Sc"> Bachelor Degree/Graduate diploma or
-    Certificate/Level 6 <br/>
-    <input type="checkbox" name="Qual" value="Master Degree"> Master Degree/PGCE/Level7 <br/>
-    <input type="checkbox" name="Qual" value="PhD"> PhD/Level8 <br/>
-    <input type="submit" />
-    </form>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="form-container">
+            <h2 class="text-center mb-4">Student Details</h2>
+            <form action="/submit-data" method="post" class="mt-4">
+                <div class="form-group">
+                    <label for="firstName"><strong>First Name:</strong></label>
+                    <input name="firstName" type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName"><strong>Last Name:</strong></label>
+                    <input name="lastName" type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailid"><strong>Email:</strong></label>
+                    <input type="email" id="emailid" name="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="myAge"><strong>Age:</strong></label>
+                    <input name="myAge" type="text" class="form-control" id="myAge" placeholder="Enter your age" required>
+                </div>
+
+                <div class="form-group">
+                    <label><strong>Gender:</strong></label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="male" name="gender" value="male" required>
+                        <label for="male" class="form-check-label">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="female" name="gender" value="female" required>
+                        <label for="female" class="form-check-label">Female</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="other" name="gender" value="other" required>
+                        <label for="other" class="form-check-label">Other</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><strong>Qualifications:</strong></label>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="Qual" value="GCSE" id="gcse">
+                        <label class="form-check-label" for="gcse">GCSE</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="Qual" value="A-level" id="alevel">
+                        <label class="form-check-label" for="alevel">A-level</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="Qual" value="Higher National Certificate" id="hnc">
+                        <label class="form-check-label" for="hnc">Higher National Certificate/Level 4</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="Qual" value="HND" id="hnd">
+                        <label class="form-check-label" for="hnd">Foundation Degree/HND/DipHE/Level 5</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="Qual" value="B.Sc" id="bsc">
+                        <label class="form-check-label" for="bsc">Bachelor Degree/Graduate diploma or Certificate/Level 6</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="Qual" value="Master Degree" id="master">
+                        <label class="form-check-label" for="master">Master Degree/PGCE/Level 7</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" name="Qual" value="PhD" id="phd">
+                        <label class="form-check-label" for="phd">PhD/Level 8</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

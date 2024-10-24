@@ -27,7 +27,6 @@ res.json({ 'status':true, 'Status_Code':200,
 });
 })
 
-
 app.get('/GetStudentid/:id',(req,res)=>{
     studentdata={}
     fs.readFile(__dirname + "/" + "Student.json", 'utf8', function (err, data) { //The _dirname in a node script returns the path of the folder where the current JavaScript file reside
@@ -43,19 +42,22 @@ app.get('/GetStudentid/:id',(req,res)=>{
     });
     })
 
+    
 app.get('/studentinfo',function(req,res){
-res.sendFile('StudentInfo.html', { root: __dirname });
-})
+    res.sendFile('StudentInfo.html', { root: __dirname });
+    })
+
 
 app.post('/submit-data', function (req, res) {
-    var name = req.body.firstName + ' ' + req.body.lastName+ ' ';
-    var Age= req.body.myAge+ ' Gender: ' + req.body.gender+' '
-    Qual= ' Qualification'+ req.body.Qual
-    console.log(req.body.Qual)
-    res.send({
-    status: true,
-    message: 'form Details', data: {
-    name: name, age:Age, Qualification:Qual,
-    }
-    });
-});
+        var name = req.body.firstName + ' ' + req.body.lastName+ ' ';
+        var Age= req.body.myAge+'';
+        var Gender = req.body.gender+'';
+        Qual= ' Qualification'+ req.body.Qual
+        console.log(req.body.Qual)
+        res.send({
+        status: true,
+        message: 'form Details', data: {
+        name: name, age:Age, gender:Gender, Qualification: Qual
+        }
+        });
+    });    
